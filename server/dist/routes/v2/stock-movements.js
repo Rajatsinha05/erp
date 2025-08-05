@@ -1,0 +1,22 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const StockMovementController_1 = require("../../controllers/StockMovementController");
+const auth_1 = require("../../middleware/auth");
+const router = (0, express_1.Router)();
+const stockMovementController = new StockMovementController_1.StockMovementController();
+router.use(auth_1.authenticate);
+router.post('/', stockMovementController.createStockMovement.bind(stockMovementController));
+router.get('/', stockMovementController.getMovementsByCompany.bind(stockMovementController));
+router.get('/search', stockMovementController.searchMovements.bind(stockMovementController));
+router.get('/stats', stockMovementController.getMovementStats.bind(stockMovementController));
+router.get('/recent', stockMovementController.getRecentMovements.bind(stockMovementController));
+router.get('/item/:itemId', stockMovementController.getMovementsByItem.bind(stockMovementController));
+router.get('/warehouse/:warehouseId', stockMovementController.getMovementsByWarehouse.bind(stockMovementController));
+router.get('/reference/:referenceNumber', stockMovementController.getMovementsByReference.bind(stockMovementController));
+router.get('/:id', stockMovementController.getStockMovementById.bind(stockMovementController));
+router.put('/:id', stockMovementController.updateStockMovement.bind(stockMovementController));
+router.get('/inventory-levels', stockMovementController.getInventoryLevels.bind(stockMovementController));
+router.post('/generate-number', stockMovementController.generateMovementNumber.bind(stockMovementController));
+exports.default = router;
+//# sourceMappingURL=stock-movements.js.map

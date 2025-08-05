@@ -1,0 +1,100 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const dotenv_1 = __importDefault(require("dotenv"));
+const path_1 = __importDefault(require("path"));
+dotenv_1.default.config({ path: path_1.default.join(__dirname, '../../.env') });
+const requiredEnvVars = [
+    'JWT_SECRET',
+    'JWT_REFRESH_SECRET',
+    'SESSION_SECRET',
+    'COOKIE_SECRET',
+    'MONGODB_URI'
+];
+const missingEnvVars = requiredEnvVars.filter(envVar => !process.env[envVar]);
+if (missingEnvVars.length > 0) {
+    throw new Error(`Missing required environment variables: ${missingEnvVars.join(', ')}`);
+}
+const config = {
+    NODE_ENV: process.env.NODE_ENV || 'development',
+    PORT: parseInt(process.env.PORT || '3000', 10),
+    APP_NAME: process.env.APP_NAME || 'Factory ERP Server',
+    APP_VERSION: process.env.APP_VERSION || '1.0.0',
+    API_PREFIX: process.env.API_PREFIX || '/api/v1',
+    MONGODB_URI: process.env.MONGODB_URI || 'mongodb://localhost:27017/factory_erp',
+    MONGODB_URI_TEST: process.env.MONGODB_URI_TEST || 'mongodb://localhost:27017/factory_erp_test',
+    DB_MAX_POOL_SIZE: parseInt(process.env.DB_MAX_POOL_SIZE || '10', 10),
+    DB_MIN_POOL_SIZE: parseInt(process.env.DB_MIN_POOL_SIZE || '5', 10),
+    JWT_SECRET: process.env.JWT_SECRET || 'your-super-secret-jwt-key-change-in-production',
+    JWT_REFRESH_SECRET: process.env.JWT_REFRESH_SECRET || 'your-super-secret-refresh-key-change-in-production',
+    JWT_EXPIRE: process.env.JWT_EXPIRE || '15m',
+    JWT_REFRESH_EXPIRE: process.env.JWT_REFRESH_EXPIRE || '7d',
+    JWT_ISSUER: process.env.JWT_ISSUER || 'factory-erp',
+    JWT_AUDIENCE: process.env.JWT_AUDIENCE || 'factory-erp-users',
+    SESSION_SECRET: process.env.SESSION_SECRET || 'your-super-secret-session-key-change-in-production',
+    SESSION_NAME: process.env.SESSION_NAME || 'factory-erp-session',
+    SESSION_MAX_AGE: parseInt(process.env.SESSION_MAX_AGE || '86400000', 10),
+    COOKIE_SECRET: process.env.COOKIE_SECRET || 'your-super-secret-cookie-key-change-in-production',
+    COOKIE_DOMAIN: process.env.COOKIE_DOMAIN || 'localhost',
+    COOKIE_SECURE: process.env.COOKIE_SECURE === 'true',
+    COOKIE_HTTP_ONLY: process.env.COOKIE_HTTP_ONLY !== 'false',
+    COOKIE_SAME_SITE: process.env.COOKIE_SAME_SITE || 'strict',
+    CORS_ORIGIN: process.env.CORS_ORIGIN?.split(',') || ['http://localhost:3000'],
+    CORS_CREDENTIALS: process.env.CORS_CREDENTIALS !== 'false',
+    RATE_LIMIT_WINDOW_MS: parseInt(process.env.RATE_LIMIT_WINDOW_MS || '900000', 10),
+    RATE_LIMIT_MAX_REQUESTS: parseInt(process.env.RATE_LIMIT_MAX_REQUESTS || '100', 10),
+    RATE_LIMIT_SKIP_SUCCESSFUL_REQUESTS: process.env.RATE_LIMIT_SKIP_SUCCESSFUL_REQUESTS !== 'false',
+    BCRYPT_SALT_ROUNDS: parseInt(process.env.BCRYPT_SALT_ROUNDS || '12', 10),
+    MAX_LOGIN_ATTEMPTS: parseInt(process.env.MAX_LOGIN_ATTEMPTS || '5', 10),
+    LOCKOUT_TIME: parseInt(process.env.LOCKOUT_TIME || '1800000', 10),
+    PASSWORD_MIN_LENGTH: parseInt(process.env.PASSWORD_MIN_LENGTH || '8', 10),
+    PASSWORD_REQUIRE_UPPERCASE: process.env.PASSWORD_REQUIRE_UPPERCASE !== 'false',
+    PASSWORD_REQUIRE_LOWERCASE: process.env.PASSWORD_REQUIRE_LOWERCASE !== 'false',
+    PASSWORD_REQUIRE_NUMBERS: process.env.PASSWORD_REQUIRE_NUMBERS !== 'false',
+    PASSWORD_REQUIRE_SYMBOLS: process.env.PASSWORD_REQUIRE_SYMBOLS !== 'false',
+    UPLOAD_MAX_FILE_SIZE: parseInt(process.env.UPLOAD_MAX_FILE_SIZE || '10485760', 10),
+    UPLOAD_ALLOWED_TYPES: process.env.UPLOAD_ALLOWED_TYPES?.split(',') || ['image/jpeg', 'image/png'],
+    UPLOAD_DESTINATION: process.env.UPLOAD_DESTINATION || 'uploads/',
+    AWS_ACCESS_KEY_ID: process.env.AWS_ACCESS_KEY_ID || '',
+    AWS_SECRET_ACCESS_KEY: process.env.AWS_SECRET_ACCESS_KEY || '',
+    AWS_REGION: process.env.AWS_REGION || 'us-east-1',
+    AWS_S3_BUCKET: process.env.AWS_S3_BUCKET || '',
+    AWS_S3_ACL: process.env.AWS_S3_ACL || 'private',
+    SMTP_HOST: process.env.SMTP_HOST || 'smtp.gmail.com',
+    SMTP_PORT: parseInt(process.env.SMTP_PORT || '587', 10),
+    SMTP_SECURE: process.env.SMTP_SECURE === 'true',
+    SMTP_USER: process.env.SMTP_USER || '',
+    SMTP_PASS: process.env.SMTP_PASS || '',
+    EMAIL_FROM: process.env.EMAIL_FROM || 'noreply@factoryerp.com',
+    EMAIL_FROM_NAME: process.env.EMAIL_FROM_NAME || 'Factory ERP System',
+    TWILIO_ACCOUNT_SID: process.env.TWILIO_ACCOUNT_SID || '',
+    TWILIO_AUTH_TOKEN: process.env.TWILIO_AUTH_TOKEN || '',
+    TWILIO_PHONE_NUMBER: process.env.TWILIO_PHONE_NUMBER || '',
+    REDIS_URL: process.env.REDIS_URL || 'redis://localhost:6379',
+    REDIS_PASSWORD: process.env.REDIS_PASSWORD || '',
+    REDIS_DB: parseInt(process.env.REDIS_DB || '0', 10),
+    REDIS_KEY_PREFIX: process.env.REDIS_KEY_PREFIX || 'factory-erp:',
+    LOG_LEVEL: process.env.LOG_LEVEL || 'info',
+    LOG_FILE: process.env.LOG_FILE || 'logs/app.log',
+    LOG_MAX_SIZE: process.env.LOG_MAX_SIZE || '20m',
+    LOG_MAX_FILES: process.env.LOG_MAX_FILES || '14d',
+    LOG_DATE_PATTERN: process.env.LOG_DATE_PATTERN || 'YYYY-MM-DD',
+    ENABLE_METRICS: process.env.ENABLE_METRICS !== 'false',
+    METRICS_PORT: parseInt(process.env.METRICS_PORT || '9090', 10),
+    HEALTH_CHECK_INTERVAL: parseInt(process.env.HEALTH_CHECK_INTERVAL || '30000', 10),
+    ENABLE_SWAGGER: process.env.ENABLE_SWAGGER !== 'false',
+    ENABLE_GRAPHQL: process.env.ENABLE_GRAPHQL === 'true',
+    ENABLE_WEBSOCKETS: process.env.ENABLE_WEBSOCKETS !== 'false',
+    ENABLE_CRON_JOBS: process.env.ENABLE_CRON_JOBS !== 'false',
+    ENABLE_FILE_COMPRESSION: process.env.ENABLE_FILE_COMPRESSION !== 'false',
+    TRUST_PROXY: process.env.TRUST_PROXY === 'true',
+    DISABLE_X_POWERED_BY: process.env.DISABLE_X_POWERED_BY !== 'false',
+    ENABLE_CONTENT_SECURITY_POLICY: process.env.ENABLE_CONTENT_SECURITY_POLICY !== 'false',
+    ENABLE_HSTS: process.env.ENABLE_HSTS !== 'false',
+    ENABLE_NOSNIFF: process.env.ENABLE_NOSNIFF !== 'false',
+    ENABLE_XSS_FILTER: process.env.ENABLE_XSS_FILTER !== 'false',
+};
+exports.default = config;
+//# sourceMappingURL=environment.js.map

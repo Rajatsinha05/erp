@@ -1,0 +1,22 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const InventoryController_1 = require("../../controllers/InventoryController");
+const auth_1 = require("../../middleware/auth");
+const router = (0, express_1.Router)();
+const inventoryController = new InventoryController_1.InventoryController();
+router.use(auth_1.authenticate);
+router.post('/', inventoryController.createInventoryItem.bind(inventoryController));
+router.get('/', inventoryController.getItemsByCompany.bind(inventoryController));
+router.get('/search', inventoryController.searchItems.bind(inventoryController));
+router.get('/stats', inventoryController.getInventoryStats.bind(inventoryController));
+router.get('/low-stock', inventoryController.getLowStockItems.bind(inventoryController));
+router.get('/code/:itemCode', inventoryController.getItemByCode.bind(inventoryController));
+router.get('/:id', inventoryController.getById.bind(inventoryController));
+router.put('/:id', inventoryController.updateInventoryItem.bind(inventoryController));
+router.post('/:itemId/stock', inventoryController.updateStock.bind(inventoryController));
+router.post('/:itemId/reserve', inventoryController.reserveStock.bind(inventoryController));
+router.post('/:itemId/release', inventoryController.releaseReservedStock.bind(inventoryController));
+router.delete('/:id', inventoryController.deleteInventoryItem.bind(inventoryController));
+exports.default = router;
+//# sourceMappingURL=inventory.js.map

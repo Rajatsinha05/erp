@@ -1,0 +1,20 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const PurchaseOrderController_1 = require("../../controllers/PurchaseOrderController");
+const auth_1 = require("../../middleware/auth");
+const router = (0, express_1.Router)();
+const purchaseOrderController = new PurchaseOrderController_1.PurchaseOrderController();
+router.use(auth_1.authenticate);
+router.post('/', purchaseOrderController.createPurchaseOrder.bind(purchaseOrderController));
+router.get('/', purchaseOrderController.getOrdersByCompany.bind(purchaseOrderController));
+router.get('/stats', purchaseOrderController.getOrderStats.bind(purchaseOrderController));
+router.get('/status/:status', purchaseOrderController.getOrdersByStatus.bind(purchaseOrderController));
+router.get('/supplier/:supplierId', purchaseOrderController.getOrdersBySupplier.bind(purchaseOrderController));
+router.get('/:id', purchaseOrderController.getPurchaseOrderById.bind(purchaseOrderController));
+router.put('/:id', purchaseOrderController.updatePurchaseOrder.bind(purchaseOrderController));
+router.put('/:orderId/status', purchaseOrderController.updateOrderStatus.bind(purchaseOrderController));
+router.post('/:orderId/receive', purchaseOrderController.receiveItems.bind(purchaseOrderController));
+router.delete('/:id', purchaseOrderController.deletePurchaseOrder.bind(purchaseOrderController));
+exports.default = router;
+//# sourceMappingURL=purchase-orders.js.map

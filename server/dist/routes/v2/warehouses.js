@@ -1,0 +1,22 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const WarehouseController_1 = require("../../controllers/WarehouseController");
+const auth_1 = require("../../middleware/auth");
+const router = (0, express_1.Router)();
+const warehouseController = new WarehouseController_1.WarehouseController();
+router.use(auth_1.authenticate);
+router.post('/', warehouseController.createWarehouse.bind(warehouseController));
+router.get('/', warehouseController.getWarehousesByCompany.bind(warehouseController));
+router.get('/search', warehouseController.searchWarehouses.bind(warehouseController));
+router.get('/stats', warehouseController.getWarehouseStats.bind(warehouseController));
+router.get('/type/:warehouseType', warehouseController.getWarehousesByType.bind(warehouseController));
+router.get('/code/:warehouseCode', warehouseController.getWarehouseByCode.bind(warehouseController));
+router.get('/:id', warehouseController.getWarehouseById.bind(warehouseController));
+router.put('/:id', warehouseController.updateWarehouse.bind(warehouseController));
+router.put('/:warehouseId/capacity', warehouseController.updateWarehouseCapacity.bind(warehouseController));
+router.post('/:warehouseId/zones', warehouseController.addStorageZone.bind(warehouseController));
+router.get('/:warehouseId/utilization', warehouseController.getWarehouseUtilization.bind(warehouseController));
+router.delete('/:id', warehouseController.deleteWarehouse.bind(warehouseController));
+exports.default = router;
+//# sourceMappingURL=warehouses.js.map

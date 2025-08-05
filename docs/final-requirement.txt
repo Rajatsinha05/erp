@@ -1,0 +1,178 @@
+Factory ERP Software Requirement Document
+For: Dhruval Exim Private Limited, Jinal Industries (Amar), and Vimal Process
+Objective
+To develop a centralized ERP software (web-based or app-supported) that offers real-time tracking of the entire
+business process including inventory, production, printing status, accounts, stock, sales, dispatch, and financials across
+all our firms.
+Involved Companies
+1. Dhruval Exim Private Limited (main firm)
+UNIT 1 to 4
+(additionally feature for more unit add)
+Product Categories
+- Printed Sarees
+- African Printed Cotton Fabric
+- Garment Fabrics
+- Digital Print Fabrics
+- Customized Orders
+Key Modules & Features
+1. Live Inventory Management
+- Raw material stock (grey fabric, chemicals, colors)
+- Semi-finished stock (under process: print, wash, fix)
+- Finished goods stock (with SKU, design, color, GSM)
+- Location-wise warehouse tracking
+- Product-wise summary (Saree / Garment / African / Digital)
+2. Production Tracking
+- Real-time status of ongoing printing (which item is being printed)
+Factory ERP Software Requirement Document
+For: Dhruval Exim Private Limited, Jinal Industries (Amar), and Vimal Process
+- Table printing vs machine printing
+- Job work tracking (in-house and third party)
+- Stitching, washing, silicate, color fixing, and finishing progress
+- Daily production summary (Firm wise and Machine wise)
+3. Order Management & Dispatch
+- Customer-wise order tracking
+- Production priority linked to order
+- Dispatch details with AWB, courier name, invoice
+- RTO and wrong return record
+- Export/Local order tagging
+4. Sales & Purchase Records
+- Customer-wise sales report
+- Supplier-wise purchase report
+- Payment received / payment pending
+- Purchase of chemicals, grey fabric, packing material
+5. Financial Dashboard
+- Bank balance tracking (multiple accounts)
+- UPI and cash entries
+- Daily expenses log (including petty cash)
+- Due payment alerts
+- GST calculation & auto-reporting option
+6. Analytics & Reports
+- Daily / Weekly / Monthly Reports:
+- Stock summary
+- Sales summary
+Factory ERP Software Requirement Document
+For: Dhruval Exim Private Limited, Jinal Industries (Amar), and Vimal Process
+- Dispatch report
+- Pending production list
+- Excel/PDF download options
+- Custom filter: Date, Firm, Product, Status
+7. Document Integration
+- Attach PDF invoices, packing lists, courier slips
+- Upload sample photos or printed fabric images
+- Digital PO creation & approval system
+8. User Roles & Permissions
+- Owner access (all features)
+- Factory manager access (production only)
+- Accountant access (only financial & sales)
+- Custom access rights per staff
+9. Notification System
+- Email/SMS/WhatsApp alert on:
+- New orders
+- Stock low warning
+- Dispatch completed
+- Payment reminders
+10. Multi-Device Support
+- Web panel (mobile and desktop)
+- Android/iOS app (optional, but preferred)
+- Secure login with 2FA
+Integration Possibility (Optional but Useful)
+Factory ERP Software Requirement Document
+For: Dhruval Exim Private Limited, Jinal Industries (Amar), and Vimal Process
+- Tally/Zoho Books sync for accounting
+- Barcode system for stock movement
+- Meesho / IndiaMart / Website order sync
+- Courier API for real-time tracking
+Future Requirements (Phase 2)
+- Fabric Design Upload System
+- Auto Pricing Calculator
+- Job Worker Payment Calculation
+- Production Planning Calendar
+11. Dispatch & Packing Management
+- Packing list creation linked with orders
+- Design-wise packing quantity tracking
+- Automatic generation of item-wise packing stickers with SKU, design, and size info
+- LR Number entry and tracking
+- Courier company, mode (air/road), and AWB entry
+- Multi-order dispatch in single lot handling
+12. Detailed Order Management
+- Order intake from clients (manual & integrated options)
+- SKU-wise mapping of designs, quantity, delivery schedule
+- Link order with production plan
+- Partial order dispatch and balance pending tracking
+- Buyer-wise, item-wise order summary
+13. Sticker & Label System
+- Print-ready barcode/QR code-based stickers
+- Customizable stickers for Sarees / Fabric rolls / Garments
+Factory ERP Software Requirement Document
+For: Dhruval Exim Private Limited, Jinal Industries (Amar), and Vimal Process
+- Batch number, color, size, design name, and scan-enabled info
+- Reprint option for lost/damaged stickers
+14. Advanced Accounting & Ledger Management
+- Firm-wise complete ledger
+- Party-wise credit/debit summary
+- Payment reminder alerts
+- Expense entry by category (chemical, color, grey, labor, transport, petty)
+- Monthly profit-loss statement
+- Multi-firm ledger merge & comparison view
+15. Expanded Inventory Management
+- Detailed SKU-wise and batch-wise stock
+- Search by design number, GSM, color, type (Saree/African/Garment)
+- Ageing stock alert system
+- Finished, semi-finished, and raw material summary
+- Location and rack-wise storage system
+16. Additional Inventory Details
+- Fent inventory tracking
+- Longation and Bleach process-wise stock status
+- Real-time update of material stage and balance quantity
+17. Order Management (Extended)
+- Packing details per order including carton count, weight, and dimensions
+- Invoice & Bill generation
+- LR (Lorry Receipt) number with transport info
+- Packing images and documents upload option
+Factory ERP Software Requirement Document
+For: Dhruval Exim Private Limited, Jinal Industries (Amar), and Vimal Process
+18. Manpower Management
+- Salary generation and payment tracking
+- Shift allocation with overtime log
+- Labour policy compliance and leaves
+- Contractor vs in-house labour separation
+19. Electricity Monitoring
+- PGVCL usage tracking (unit-wise/monthly)
+- Solar power unit generation log
+- Cost savings summary (PGVCL vs Solar)
+- Breakdown alerts and maintenance logs
+20. Hospitality Management
+- Customer visit expenses: Party name, date, purpose, travel type
+- Hotel and food expense tracking
+- Gifts or samples given log
+- Linked with marketing or client development team
+21. Security Management
+- Vehicle number (in/out)
+- Driver name & mobile number
+- Purpose of visit (Delivery / Pickup / Maintenance)
+- Time in - Time out
+- Gate pass system
+Factory ERP Software Requirement Document
+For: Dhruval Exim Private Limited, Jinal Industries (Amar), and Vimal Process
+- Raw material inward (linked with purchase)
+- Finished goods outward (linked with dispatch)
+- Gate pass for material movement
+- Damaged/Return goods record
+- Fire extinguisher check record
+- Emergency exit inspection
+- First-aid kit log
+- Safety gear issue tracking (helmets, gloves, shoes)
+22. UI/UX Experience
+- Easy-to-use and intuitive interface for all staff levels
+- Premium UI/UX with clean layout and icons
+- Multi-language support (optional: English/Gujarati/Hindi)
+- Responsive design for both mobile and desktop
+- Dashboard-based summaries with quick access tiles
+23. Boiler Monitoring
+- Boiler temperature must be updated regularly in the ERP system.
+- Temperature entries should be accompanied by real-time photo uploads for verification.
+- Photo should clearly display the temperature meter or digital reading screen.
+24. Dispatch Verification via Photo
+- For each dispatch, users must upload a photo of the packed goods in the ERP.
+- Photo should include box labeling, sticker placement, and quantity overview.
+- Helps maintain visual proof and improves transparency in logistics.

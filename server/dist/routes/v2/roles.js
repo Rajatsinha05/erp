@@ -1,0 +1,21 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const RoleController_1 = require("../../controllers/RoleController");
+const auth_1 = require("../../middleware/auth");
+const router = (0, express_1.Router)();
+const roleController = new RoleController_1.RoleController();
+router.use(auth_1.authenticate);
+router.post('/', roleController.createRole.bind(roleController));
+router.get('/', roleController.getRolesByCompany.bind(roleController));
+router.get('/search', roleController.searchRoles.bind(roleController));
+router.get('/stats', roleController.getRoleStats.bind(roleController));
+router.get('/name/:roleName', roleController.getRoleByName.bind(roleController));
+router.get('/:id', roleController.getRoleById.bind(roleController));
+router.put('/:id', roleController.updateRole.bind(roleController));
+router.put('/:roleId/permissions', roleController.updateRolePermissions.bind(roleController));
+router.get('/:roleId/check-permission', roleController.checkPermission.bind(roleController));
+router.post('/:roleId/clone', roleController.cloneRole.bind(roleController));
+router.delete('/:id', roleController.deleteRole.bind(roleController));
+exports.default = router;
+//# sourceMappingURL=roles.js.map

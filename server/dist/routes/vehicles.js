@@ -1,0 +1,24 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const VehicleController_1 = require("../controllers/VehicleController");
+const auth_1 = require("../middleware/auth");
+const router = (0, express_1.Router)();
+const vehicleController = new VehicleController_1.VehicleController();
+router.use(auth_1.authenticate);
+router.post('/', vehicleController.createVehicle.bind(vehicleController));
+router.get('/', vehicleController.getVehiclesByCompany.bind(vehicleController));
+router.get('/search', vehicleController.searchVehicles.bind(vehicleController));
+router.get('/stats', vehicleController.getVehicleStats.bind(vehicleController));
+router.get('/maintenance-due', vehicleController.getVehiclesDueForMaintenance.bind(vehicleController));
+router.get('/type/:vehicleType', vehicleController.getVehiclesByType.bind(vehicleController));
+router.get('/number/:vehicleNumber', vehicleController.getVehicleByNumber.bind(vehicleController));
+router.get('/:id', vehicleController.getVehicleById.bind(vehicleController));
+router.put('/:id', vehicleController.updateVehicle.bind(vehicleController));
+router.patch('/:id/checkout', vehicleController.checkoutVehicle.bind(vehicleController));
+router.put('/:vehicleId/status', vehicleController.updateVehicleStatus.bind(vehicleController));
+router.post('/:vehicleId/maintenance', vehicleController.addMaintenanceRecord.bind(vehicleController));
+router.get('/:vehicleId/maintenance-history', vehicleController.getMaintenanceHistory.bind(vehicleController));
+router.delete('/:id', vehicleController.deleteVehicle.bind(vehicleController));
+exports.default = router;
+//# sourceMappingURL=vehicles.js.map

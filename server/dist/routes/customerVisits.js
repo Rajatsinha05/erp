@@ -1,0 +1,22 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const CustomerVisitController_1 = require("../controllers/CustomerVisitController");
+const auth_1 = require("../middleware/auth");
+const router = (0, express_1.Router)();
+const customerVisitController = new CustomerVisitController_1.CustomerVisitController();
+router.use(auth_1.authenticate);
+router.get('/', customerVisitController.getAllCustomerVisits.bind(customerVisitController));
+router.get('/stats', customerVisitController.getExpenseStats.bind(customerVisitController));
+router.get('/pending-approvals', customerVisitController.getPendingApprovals.bind(customerVisitController));
+router.get('/:id', customerVisitController.getCustomerVisitById.bind(customerVisitController));
+router.post('/', customerVisitController.createCustomerVisit.bind(customerVisitController));
+router.put('/:id', customerVisitController.updateCustomerVisit.bind(customerVisitController));
+router.delete('/:id', customerVisitController.deleteCustomerVisit.bind(customerVisitController));
+router.patch('/:id/approve', customerVisitController.approveVisit.bind(customerVisitController));
+router.patch('/:id/reject', customerVisitController.rejectVisit.bind(customerVisitController));
+router.patch('/:id/reimburse', customerVisitController.markAsReimbursed.bind(customerVisitController));
+router.post('/:id/food-expense', customerVisitController.addFoodExpense.bind(customerVisitController));
+router.post('/:id/gift', customerVisitController.addGift.bind(customerVisitController));
+exports.default = router;
+//# sourceMappingURL=customerVisits.js.map

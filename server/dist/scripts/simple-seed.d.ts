@@ -1,0 +1,51 @@
+#!/usr/bin/env ts-node
+declare class SimpleSeed {
+    private companies;
+    private users;
+    private roles;
+    private customers;
+    private suppliers;
+    private warehouses;
+    private inventoryItems;
+    private productionOrders;
+    private customerOrders;
+    private purchaseOrders;
+    private invoices;
+    private quotations;
+    private financialTransactions;
+    private visitors;
+    private vehicles;
+    private securityLogs;
+    private auditLogs;
+    private businessAnalytics;
+    private hospitality;
+    private dispatches;
+    private reports;
+    connect(): Promise<void>;
+    clearDatabase(): Promise<void>;
+    seedCompanies(): Promise<void>;
+    seedUsers(): Promise<void>;
+    seedRoles(): Promise<void>;
+    seedCustomers(): Promise<void>;
+    seedSuppliers(): Promise<void>;
+    seedWarehouses(): Promise<void>;
+    seedInventoryItems(): Promise<void>;
+    seedProductionOrders(): Promise<void>;
+    seedCustomerOrders(): Promise<void>;
+    seedPurchaseOrders(): Promise<void>;
+    seedInvoices(): Promise<void>;
+    seedQuotations(): Promise<void>;
+    seedFinancialTransactions(): Promise<void>;
+    seedVisitors(): Promise<void>;
+    seedVehicles(): Promise<void>;
+    seedSecurityLogs(): Promise<void>;
+    seedAuditLogs(): Promise<void>;
+    seedBusinessAnalytics(): Promise<void>;
+    seedMonitoringData(): Promise<void>;
+    seedHospitality(): Promise<void>;
+    seedDispatches(): Promise<void>;
+    seedReports(): Promise<void>;
+    run(): Promise<void>;
+}
+export default SimpleSeed;
+//# sourceMappingURL=simple-seed.d.ts.map

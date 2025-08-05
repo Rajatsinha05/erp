@@ -1,0 +1,443 @@
+{
+  error: 'listen EADDRINUSE: address already in use :::4000',
+  stack: 'Error: listen EADDRINUSE: address already in use :::4000\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1905:16)\n' +
+    '    at listenInCluster (node:net:1962:12)\n' +
+    '    at Server.listen (node:net:2064:7)\n' +
+    '    at startServer (/Users/rajat/Downloads/projects/erp/server/src/server.ts:479:16)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)',
+  level: 'error',
+  message: 'Uncaught Exception',
+  timestamp: '2025-08-06 00:12:11:1211'
+}
+{
+  error: 'listen EADDRINUSE: address already in use :::4000',
+  stack: 'Error: listen EADDRINUSE: address already in use :::4000\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1940:16)\n' +
+    '    at listenInCluster (node:net:1997:12)\n' +
+    '    at Server.listen (node:net:2102:7)\n' +
+    '    at startServer (/Users/rajat/Downloads/projects/erp/server/src/server.ts:479:16)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)',
+  level: 'error',
+  message: 'Uncaught Exception',
+  timestamp: '2025-08-06 00:20:58:2058'
+}
+{
+  error: 'listen EADDRINUSE: address already in use :::4000',
+  stack: 'Error: listen EADDRINUSE: address already in use :::4000\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1905:16)\n' +
+    '    at listenInCluster (node:net:1962:12)\n' +
+    '    at Server.listen (node:net:2064:7)\n' +
+    '    at startServer (/Users/rajat/Downloads/projects/erp/server/src/server.ts:479:16)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)',
+  level: 'error',
+  message: 'Uncaught Exception',
+  timestamp: '2025-08-06 00:26:19:2619'
+}
+{
+  message: 'Mongoose disconnected from MongoDB',
+  level: 'warn',
+  timestamp: '2025-08-06 00:33:25:3325'
+}
+{
+  error: Error: Comparison operator must be an array of length 2
+      at castComparison (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/helpers/query/cast$expr.js:210:11)
+      at _castExpression (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/helpers/query/cast$expr.js:112:18)
+      at cast$expr (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/helpers/query/cast$expr.js:79:10)
+      at cast (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/cast.js:104:13)
+      at model.Query.Query.cast (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/query.js:5055:12)
+      at model.Query.Query._castConditions (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/query.js:2351:10)
+      at model.Query._find (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/query.js:2378:8)
+      at model.Query.exec (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/query.js:4604:80)
+      at processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async SpareService.getLowStockSpares (/Users/rajat/Downloads/projects/erp/server/src/services/SpareService.ts:238:22),
+  companyId: '6889d16fb078601eca6fed53',
+  level: 'error',
+  message: 'Error getting low stock spares',
+  timestamp: '2025-08-06 00:40:06:406'
+}
+{
+  error: AppError: Failed to retrieve low stock spares
+      at SpareService.getLowStockSpares (/Users/rajat/Downloads/projects/erp/server/src/services/SpareService.ts:254:13)
+      at processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async SpareController.getLowStockSpares (/Users/rajat/Downloads/projects/erp/server/src/controllers/SpareController.ts:130:22) {
+    statusCode: 500,
+    isOperational: true,
+    details: Error: Comparison operator must be an array of length 2
+        at castComparison (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/helpers/query/cast$expr.js:210:11)
+        at _castExpression (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/helpers/query/cast$expr.js:112:18)
+        at cast$expr (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/helpers/query/cast$expr.js:79:10)
+        at cast (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/cast.js:104:13)
+        at model.Query.Query.cast (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/query.js:5055:12)
+        at model.Query.Query._castConditions (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/query.js:2351:10)
+        at model.Query._find (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/query.js:2378:8)
+        at model.Query.exec (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/query.js:4604:80)
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at async SpareService.getLowStockSpares (/Users/rajat/Downloads/projects/erp/server/src/services/SpareService.ts:238:22)
+  },
+  message: 'Spare controller error Operation failed',
+  level: 'error',
+  timestamp: '2025-08-06 00:40:06:406'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 00:40:30:4030'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 00:40:46:4046'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 00:40:57:4057'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 00:42:31:4231'
+}
+{
+  message: 'Mongoose disconnected from MongoDB',
+  level: 'warn',
+  timestamp: '2025-08-06 00:48:54:4854'
+}
+{
+  message: 'Mongoose disconnected from MongoDB',
+  level: 'warn',
+  timestamp: '2025-08-06 00:55:59:5559'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 00:56:27:5627'
+}
+{
+  message: 'Mongoose disconnected from MongoDB',
+  level: 'warn',
+  timestamp: '2025-08-06 00:58:38:5838'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 00:59:46:5946'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 00:59:53:5953'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 01:00:03:03'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 01:00:16:016'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 01:00:48:048'
+}
+{
+  error: Error: Comparison operator must be an array of length 2
+      at castComparison (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/helpers/query/cast$expr.js:210:11)
+      at _castExpression (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/helpers/query/cast$expr.js:112:18)
+      at cast$expr (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/helpers/query/cast$expr.js:79:10)
+      at cast (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/cast.js:104:13)
+      at model.Query.Query.cast (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/query.js:5055:12)
+      at model.Query.Query._castConditions (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/query.js:2351:10)
+      at model.Query._find (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/query.js:2378:8)
+      at model.Query.exec (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/query.js:4604:80)
+      at processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async SpareService.getLowStockSpares (/Users/rajat/Downloads/projects/erp/server/src/services/SpareService.ts:238:22),
+  companyId: '6889d16fb078601eca6fed53',
+  level: 'error',
+  message: 'Error getting low stock spares',
+  timestamp: '2025-08-06 01:01:22:122'
+}
+{
+  error: AppError: Failed to retrieve low stock spares
+      at SpareService.getLowStockSpares (/Users/rajat/Downloads/projects/erp/server/src/services/SpareService.ts:254:13)
+      at processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async SpareController.getLowStockSpares (/Users/rajat/Downloads/projects/erp/server/src/controllers/SpareController.ts:130:22) {
+    statusCode: 500,
+    isOperational: true,
+    details: Error: Comparison operator must be an array of length 2
+        at castComparison (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/helpers/query/cast$expr.js:210:11)
+        at _castExpression (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/helpers/query/cast$expr.js:112:18)
+        at cast$expr (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/helpers/query/cast$expr.js:79:10)
+        at cast (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/cast.js:104:13)
+        at model.Query.Query.cast (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/query.js:5055:12)
+        at model.Query.Query._castConditions (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/query.js:2351:10)
+        at model.Query._find (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/query.js:2378:8)
+        at model.Query.exec (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongoose@8.16.4/node_modules/mongoose/lib/query.js:4604:80)
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at async SpareService.getLowStockSpares (/Users/rajat/Downloads/projects/erp/server/src/services/SpareService.ts:238:22)
+  },
+  message: 'Spare controller error Operation failed',
+  level: 'error',
+  timestamp: '2025-08-06 01:01:22:122'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 01:03:55:355'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 01:04:16:416'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 01:04:16:416'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 01:07:36:736'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 01:07:36:736'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 01:09:43:943'
+}
+{
+  message: 'Mongoose disconnected from MongoDB',
+  level: 'warn',
+  timestamp: '2025-08-06 01:21:26:2126'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 01:21:46:2146'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 01:22:01:221'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 01:22:12:2212'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 01:23:47:2347'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 01:25:30:2530'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 01:25:35:2535'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 01:27:58:2758'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 01:28:04:284'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 01:28:33:2833'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 01:30:12:3012'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 01:30:15:3015'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 01:30:18:3018'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 01:30:21:3021'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 01:32:00:320'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 01:32:00:320'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 01:32:31:3231'
+}
+{
+  method: 'GET',
+  path: '/',
+  ip: '::1',
+  userAgent: 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36',
+  level: 'warn',
+  message: 'Route not found',
+  timestamp: '2025-08-06 01:32:31:3231'
+}
+{
+  message: 'Mongoose disconnected from MongoDB',
+  level: 'warn',
+  timestamp: '2025-08-06 01:33:27:3327'
+}

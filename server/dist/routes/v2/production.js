@@ -1,0 +1,21 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const ProductionController_1 = require("../../controllers/ProductionController");
+const auth_1 = require("../../middleware/auth");
+const router = (0, express_1.Router)();
+const productionController = new ProductionController_1.ProductionController();
+router.use(auth_1.authenticate);
+router.post('/', productionController.createProductionOrder.bind(productionController));
+router.get('/', productionController.getProductionOrdersByCompany.bind(productionController));
+router.get('/stats', productionController.getProductionStats.bind(productionController));
+router.get('/status/:status', productionController.getOrdersByStatus.bind(productionController));
+router.get('/order/:orderNumber', productionController.getOrderByNumber.bind(productionController));
+router.get('/:id', productionController.getProductionOrderById.bind(productionController));
+router.put('/:id', productionController.updateProductionOrder.bind(productionController));
+router.post('/:orderId/start', productionController.startProduction.bind(productionController));
+router.post('/:orderId/complete-stage', productionController.completeStage.bind(productionController));
+router.post('/:orderId/complete', productionController.completeProduction.bind(productionController));
+router.post('/:orderId/cancel', productionController.cancelProduction.bind(productionController));
+exports.default = router;
+//# sourceMappingURL=production.js.map

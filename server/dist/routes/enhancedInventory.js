@@ -1,0 +1,23 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const EnhancedInventoryController_1 = require("@/controllers/EnhancedInventoryController");
+const BatchController_1 = require("@/controllers/BatchController");
+const auth_1 = require("@/middleware/auth");
+const router = (0, express_1.Router)();
+const enhancedInventoryController = new EnhancedInventoryController_1.EnhancedInventoryController();
+const batchController = new BatchController_1.BatchController();
+router.use(auth_1.authenticate);
+router.get('/summary', enhancedInventoryController.getInventorySummary.bind(enhancedInventoryController));
+router.get('/product-summary', enhancedInventoryController.getProductSummary.bind(enhancedInventoryController));
+router.get('/location-wise', enhancedInventoryController.getLocationWiseInventory.bind(enhancedInventoryController));
+router.get('/ageing-analysis', enhancedInventoryController.getAgeingAnalysis.bind(enhancedInventoryController));
+router.get('/advanced-search', enhancedInventoryController.advancedSearch.bind(enhancedInventoryController));
+router.get('/batches', batchController.getAllBatches.bind(batchController));
+router.get('/batches/:id', batchController.getBatchById.bind(batchController));
+router.post('/batches', batchController.createBatch.bind(batchController));
+router.put('/batches/:id', batchController.updateBatch.bind(batchController));
+router.get('/batches/summary/by-stage', batchController.getBatchSummaryByStage.bind(batchController));
+router.put('/batches/:id/process-stage', batchController.updateProcessStage.bind(batchController));
+exports.default = router;
+//# sourceMappingURL=enhancedInventory.js.map

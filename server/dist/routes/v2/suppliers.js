@@ -1,0 +1,20 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const SupplierController_1 = require("../../controllers/SupplierController");
+const auth_1 = require("../../middleware/auth");
+const router = (0, express_1.Router)();
+const supplierController = new SupplierController_1.SupplierController();
+router.use(auth_1.authenticate);
+router.post('/', supplierController.createSupplier.bind(supplierController));
+router.get('/', supplierController.getSuppliersByCompany.bind(supplierController));
+router.get('/search', supplierController.searchSuppliers.bind(supplierController));
+router.get('/stats', supplierController.getSupplierStats.bind(supplierController));
+router.get('/category/:category', supplierController.getSuppliersByCategory.bind(supplierController));
+router.get('/code/:supplierCode', supplierController.getSupplierByCode.bind(supplierController));
+router.get('/:id', supplierController.getSupplierById.bind(supplierController));
+router.put('/:id', supplierController.updateSupplier.bind(supplierController));
+router.put('/:id/rating', supplierController.updateSupplierRating.bind(supplierController));
+router.delete('/:id', supplierController.deleteSupplier.bind(supplierController));
+exports.default = router;
+//# sourceMappingURL=suppliers.js.map

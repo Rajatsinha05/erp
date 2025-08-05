@@ -1,0 +1,20 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const QuotationController_1 = require("../../controllers/QuotationController");
+const auth_1 = require("../../middleware/auth");
+const router = (0, express_1.Router)();
+const quotationController = new QuotationController_1.QuotationController();
+router.use(auth_1.authenticate);
+router.post('/', quotationController.createQuotation.bind(quotationController));
+router.get('/', quotationController.getQuotationsByCompany.bind(quotationController));
+router.get('/stats', quotationController.getQuotationStats.bind(quotationController));
+router.get('/expired', quotationController.getExpiredQuotations.bind(quotationController));
+router.get('/customer/:customerId', quotationController.getQuotationsByCustomer.bind(quotationController));
+router.get('/:id', quotationController.getQuotationById.bind(quotationController));
+router.put('/:id', quotationController.updateQuotation.bind(quotationController));
+router.put('/:quotationId/status', quotationController.updateQuotationStatus.bind(quotationController));
+router.post('/:quotationId/convert', quotationController.convertToOrder.bind(quotationController));
+router.delete('/:id', quotationController.deleteQuotation.bind(quotationController));
+exports.default = router;
+//# sourceMappingURL=quotations.js.map

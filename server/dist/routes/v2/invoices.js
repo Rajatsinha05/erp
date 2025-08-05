@@ -1,0 +1,23 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const InvoiceController_1 = require("../../controllers/InvoiceController");
+const auth_1 = require("../../middleware/auth");
+const router = (0, express_1.Router)();
+const invoiceController = new InvoiceController_1.InvoiceController();
+router.use(auth_1.authenticate);
+router.post('/', invoiceController.createInvoice.bind(invoiceController));
+router.post('/generate-number', invoiceController.generateInvoiceNumber.bind(invoiceController));
+router.get('/', invoiceController.getInvoicesByCompany.bind(invoiceController));
+router.get('/stats', invoiceController.getInvoiceStats.bind(invoiceController));
+router.get('/overdue', invoiceController.getOverdueInvoices.bind(invoiceController));
+router.get('/customer/:customerId', invoiceController.getInvoicesByCustomer.bind(invoiceController));
+router.get('/:id', invoiceController.getInvoiceById.bind(invoiceController));
+router.put('/:id', invoiceController.updateInvoice.bind(invoiceController));
+router.put('/:invoiceId/status', invoiceController.updateInvoiceStatus.bind(invoiceController));
+router.post('/:invoiceId/payment', invoiceController.recordPayment.bind(invoiceController));
+router.delete('/:id', invoiceController.deleteInvoice.bind(invoiceController));
+router.get('/:id/pdf', invoiceController.generateInvoicePDF.bind(invoiceController));
+router.post('/preview', invoiceController.previewInvoice.bind(invoiceController));
+exports.default = router;
+//# sourceMappingURL=invoices.js.map

@@ -1,0 +1,20 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const CustomerOrderController_1 = require("../../controllers/CustomerOrderController");
+const auth_1 = require("../../middleware/auth");
+const router = (0, express_1.Router)();
+const customerOrderController = new CustomerOrderController_1.CustomerOrderController();
+router.use(auth_1.authenticate);
+router.post('/', customerOrderController.createCustomerOrder.bind(customerOrderController));
+router.get('/', customerOrderController.getOrdersByCompany.bind(customerOrderController));
+router.get('/stats', customerOrderController.getOrderStats.bind(customerOrderController));
+router.get('/status/:status', customerOrderController.getOrdersByStatus.bind(customerOrderController));
+router.get('/customer/:customerId', customerOrderController.getOrdersByCustomer.bind(customerOrderController));
+router.get('/order/:orderNumber', customerOrderController.getOrderByNumber.bind(customerOrderController));
+router.get('/:id', customerOrderController.getCustomerOrderById.bind(customerOrderController));
+router.put('/:id', customerOrderController.updateCustomerOrder.bind(customerOrderController));
+router.put('/:orderId/status', customerOrderController.updateOrderStatus.bind(customerOrderController));
+router.delete('/:id', customerOrderController.deleteCustomerOrder.bind(customerOrderController));
+exports.default = router;
+//# sourceMappingURL=customer-orders.js.map

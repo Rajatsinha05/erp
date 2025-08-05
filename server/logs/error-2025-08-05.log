@@ -1,0 +1,88 @@
+{
+  error: 'listen EADDRINUSE: address already in use :::4000',
+  stack: 'Error: listen EADDRINUSE: address already in use :::4000\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1905:16)\n' +
+    '    at listenInCluster (node:net:1962:12)\n' +
+    '    at Server.listen (node:net:2064:7)\n' +
+    '    at startServer (/Users/rajat/Downloads/projects/erp/server/src/server.ts:476:16)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)',
+  level: 'error',
+  message: 'Uncaught Exception',
+  timestamp: '2025-08-05 00:29:12:2912'
+}
+{
+  error: 'listen EADDRINUSE: address already in use :::4000',
+  stack: 'Error: listen EADDRINUSE: address already in use :::4000\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1905:16)\n' +
+    '    at listenInCluster (node:net:1962:12)\n' +
+    '    at Server.listen (node:net:2064:7)\n' +
+    '    at startServer (/Users/rajat/Downloads/projects/erp/server/src/server.ts:476:16)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)',
+  level: 'error',
+  message: 'Uncaught Exception',
+  timestamp: '2025-08-05 00:29:34:2934'
+}
+{
+  error: 'listen EADDRINUSE: address already in use :::4000',
+  stack: 'Error: listen EADDRINUSE: address already in use :::4000\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1905:16)\n' +
+    '    at listenInCluster (node:net:1962:12)\n' +
+    '    at Server.listen (node:net:2064:7)\n' +
+    '    at startServer (/Users/rajat/Downloads/projects/erp/server/src/server.ts:476:16)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)',
+  level: 'error',
+  message: 'Uncaught Exception',
+  timestamp: '2025-08-05 09:16:08:168'
+}
+{
+  error: 'listen EADDRINUSE: address already in use :::4000',
+  stack: 'Error: listen EADDRINUSE: address already in use :::4000\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1940:16)\n' +
+    '    at listenInCluster (node:net:1997:12)\n' +
+    '    at Server.listen (node:net:2102:7)\n' +
+    '    at startServer (/Users/rajat/Downloads/projects/erp/server/src/server.ts:476:16)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)',
+  level: 'error',
+  message: 'Uncaught Exception',
+  timestamp: '2025-08-05 09:17:47:1747'
+}
+{
+  error: 'listen EADDRINUSE: address already in use :::4000',
+  stack: 'Error: listen EADDRINUSE: address already in use :::4000\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1905:16)\n' +
+    '    at listenInCluster (node:net:1962:12)\n' +
+    '    at Server.listen (node:net:2064:7)\n' +
+    '    at startServer (/Users/rajat/Downloads/projects/erp/server/src/server.ts:476:16)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)',
+  level: 'error',
+  message: 'Uncaught Exception',
+  timestamp: '2025-08-05 09:35:48:3548'
+}
+{
+  errorLabelSet: Set(1) { 'PoolRequstedRetry' },
+  beforeHandshake: false,
+  address: 'ac-mlwf7mg-shard-00-02.h5jya9a.mongodb.net:27017',
+  level: 'error',
+  message: '❌ Failed to create index for users: Recent login tracking Connection pool for ac-mlwf7mg-shard-00-02.h5jya9a.mongodb.net:27017 was cleared because another operation failed with: "connection 15 to 159.41.188.76:27017 timed out"',
+  stack: 'MongoPoolClearedError: Connection pool for ac-mlwf7mg-shard-00-02.h5jya9a.mongodb.net:27017 was cleared because another operation failed with: "connection 15 to 159.41.188.76:27017 timed out"\n' +
+    '    at ConnectionPool.processWaitQueue (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongodb@6.17.0/node_modules/mongodb/src/cmap/connection_pool.ts:749:65)\n' +
+    '    at ConnectionPool.clear (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongodb@6.17.0/node_modules/mongodb/src/cmap/connection_pool.ts:476:10)\n' +
+    '    at updateServers (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongodb@6.17.0/node_modules/mongodb/src/sdam/topology.ts:874:21)\n' +
+    '    at Topology.serverUpdateHandler (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongodb@6.17.0/node_modules/mongodb/src/sdam/topology.ts:732:5)\n' +
+    '    at Server.<anonymous> (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongodb@6.17.0/node_modules/mongodb/src/sdam/topology.ts:850:66)\n' +
+    '    at Server.emit (node:events:507:28)\n' +
+    '    at Server.emit (node:domain:489:12)\n' +
+    '    at markServerUnknown (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongodb@6.17.0/node_modules/mongodb/src/sdam/server.ts:533:10)\n' +
+    '    at Server.handleError (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongodb@6.17.0/node_modules/mongodb/src/sdam/server.ts:413:9)\n' +
+    '    at /Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongodb@6.17.0/node_modules/mongodb/src/cmap/connection_pool.ts:673:21',
+  cause: MongoNetworkTimeoutError: connection 15 to 159.41.188.76:27017 timed out
+      at Timeout._onTimeout (/Users/rajat/Downloads/projects/erp/server/node_modules/.pnpm/mongodb@6.17.0/node_modules/mongodb/src/cmap/connection.ts:328:20)
+      at listOnTimeout (node:internal/timers:608:17)
+      at processTimers (node:internal/timers:543:7) {
+    errorLabelSet: Set(2) { 'HandshakeError', 'ResetPool' },
+    beforeHandshake: true,
+    connectionGeneration: 0,
+    [cause]: undefined
+  },
+  timestamp: '2025-08-05 09:36:01:361'
+}
