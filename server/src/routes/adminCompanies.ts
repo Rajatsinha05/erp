@@ -4,7 +4,8 @@ import User from '@/models/User';
 import { authenticate, requireSuperAdmin } from '@/middleware/auth';
 import { logAudit } from '@/utils/logger';
 
-const router = Router();
+const router:Router = Router();
+
 
 /**
  * GET /api/admin/companies
